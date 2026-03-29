@@ -10,14 +10,13 @@ matrixAuthenticationService:
 
 synapse:
   additional:
-    homeserver.yaml:
-      config: |
-        enable_registration: true
-        enable_registration_without_verification: true
-    user-directory.yaml:
+    user-config.yaml:
       config: |
         user_directory:
           enabled: true
           search_all_users: true
           prefer_local_users: true
-        
+        room_prejoin_state:
+          disable_default_event_types: false
+          additional_event_types:
+            - coop.murmr.event
